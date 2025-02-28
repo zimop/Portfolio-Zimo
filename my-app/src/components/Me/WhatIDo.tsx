@@ -1,3 +1,4 @@
+import Image from "next/image"
 const WhatIDo: React.FC = () => {
     const languages = [
         {
@@ -41,11 +42,12 @@ const WhatIDo: React.FC = () => {
                         <div key = {idx}>
                             <div className = "w-full h-full flex justify-center items-center">
                                 <div>
-                                    <img
+                                    <Image
                                         src = {language.src}
-                                        width = {"50px"}
-                                        height = {"50px"}>
-                                    </img>
+                                        alt = {"picture"}
+                                        width = {50}
+                                        height = {50}>
+                                    </Image>
                                 </div>
                             </div>
                             <span className = "w-full flex justify-center items-center text-gray-400">{language.name}</span>
@@ -55,20 +57,22 @@ const WhatIDo: React.FC = () => {
                 <div className = "grid grid-rows-4">
                     {summary.map((sentence, idx) => (
                         <div key = {idx} className = "grid grid-cols-[0.1fr_1.3fr] flex flex-col justify-center items-center">
-                            <img
+                            <Image
                                 src = "/icons/blue-thunder.png" 
-                                width = {"40px"}
-                                height = {"40px"}/>
+                                alt = {"bullets"}
+                                width = {40}
+                                height = {40}/>
                             <span className = "text-[23px] text-gray-500">{sentence}</span>
                         </div>
                     ))}
                 </div>
             </div>
             <div className = "w-full flex justify-center items-center">
-               <img
+               <Image
                 src = "/assets/computer.gif"
-                width={"300px"}
-                height={"300px"}
+                alt = {"computer"}
+                width={400}
+                height={400}
                />
             </div>
             <div className = "w-full flex justify-center items-center">

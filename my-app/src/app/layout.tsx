@@ -6,6 +6,7 @@ const catamaran = Catamaran({
   variable: "--font-catamaran", // Define a CSS variable for Catamaran
   subsets: ["latin"],
   weight: ["400", "700"], // Specify weights if needed
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${catamaran.variable} antialiased mx-[100px]`}
+        className={`${catamaran.variable} antialiased`}
       >
         {children}
       </body>

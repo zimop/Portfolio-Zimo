@@ -12,14 +12,14 @@ const Background: React.FC = () => {
             </div>
             {rows.map((_, i) => (
             <div key = {i}>
-                <div className="flex -ml-[calc((100vw/40)/2)] -mt-[calc((100vw/40/0.866/2/2))]">
+                <div className="flex -ml-[calc((100vw/40)/2)] -mt-[calc((100vw/40/0.866666666/2/2))]">
                 {hexagons.map((_, index) => (
                     <div key={index} className="hexagon flex justify-center items-center">
                     <div className="hexagon-inner"></div>
                     </div>
                 ))}
                 </div>
-                <div className="flex -mt-[calc((100vw/40/0.866/2/2))]">
+                <div className="flex -mt-[calc((100vw/40/0.866666666/2/2))]">
                 {hexagons.map((_, index) => (
                     <div key={index} className="hexagon flex justify-center items-center">
                     <div className="hexagon-inner"></div>

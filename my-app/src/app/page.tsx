@@ -7,9 +7,9 @@ import Hobbies from "@/components/Hobbies/Hobbies";
 
 export default function Home() {
   return (
-    <div className = "relative w-full h-screen ">
-      <main>
-        <Background />
+    <div className = "relative w-full h-screen">
+      <Background />
+      <main className = "mx-[100px]">
         <Navbar/>
         <section id = "home">
           <HomePage/>
