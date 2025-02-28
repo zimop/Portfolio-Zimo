@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --hex-size: 50px; /* Width of hexagons */
+  --hex-height: 200px; /* Adjust height for a perfect fit */
+  --hex-height-inner: 190px;
+  --hex-gap: 3px; /* Space between hexagons */
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+h1 {
+  font-size: 10rem;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.hexagon {
+  height: calc(100vw / 30 / 0.866 );/* adjust to control the size  */
+  aspect-ratio: cos(30deg);
+  clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
+  background: white;
+}
+
+.hexagon-inner {
+  height: calc((100vw / 30 / 0.866) - 3px); /* adjust to control the size  */
+  aspect-ratio: cos(30deg);
+  clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
+  background: white;
+}
+
+.hexagon:hover .hexagon-inner {
+  background: black;
+}
+
+.name{
+  color: rgb(51, 113, 255);
+  display: block;
+  font-family: Catamaran, sans-serif;
+  font-size: 120px;
+  font-weight: 900;
+  height: 100px;
+  line-height: 100px;
+  margin-block-end: 10px;
+  margin-block-start: 0px;
+  margin-bottom: 10px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  text-align: center;
+  width: 632px;
+}
+
+.subheading {
+  color: rgb(26, 32, 44);
+  display: block;
+  font-family: Catamaran, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  height: 117px;
+  line-height: 39px;
+  margin-block-end: 20px;
+  margin-block-start: 0px;
+  margin-bottom: 20px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  text-align: center;
+  width: 632px;
+}
