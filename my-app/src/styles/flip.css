@@ -1,0 +1,32 @@
+.flip-container {
+    perspective: 1000px; /* Creates a 3D space */
+  }
+  
+  .flip-card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.5s; /* The time of the flip */
+  }
+  
+  .flip-card:hover {
+    transform: rotateY(180deg); /* Flip effect */
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    backface-visibility: hidden; /* Hides the back side when flipped */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .flip-card-front {
+    background: lightblue; /* Front side background */
+  }
+  
+  .flip-card-back {
+    background: lightcoral; /* Back side background */
+    transform: rotateY(180deg); /* Initially rotate the back side */
+  }
