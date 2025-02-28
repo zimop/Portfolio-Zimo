@@ -45,20 +45,20 @@ body {
 }
 
 .hexagon {
-  height: calc(100vw / 30 / 0.866 );/* adjust to control the size  */
+  height: calc(100vw / 40 / 0.866 );/* adjust to control the size  */
   aspect-ratio: cos(30deg);
   clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
   background: white;
 }
 
 .hexagon-inner {
-  height: calc((100vw / 30 / 0.866) - 3px); /* adjust to control the size  */
+  height: calc((100vw / 40 / 0.866) - 7px); /* adjust to control the size  */
   aspect-ratio: cos(30deg);
   clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
   background: white;
 }
 
-.hexagon:hover .hexagon-inner {
+.hexagon:hover{
   background: black;
 }
 
