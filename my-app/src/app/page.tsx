@@ -1,5 +1,4 @@
 
-import TypistComponent from "@/components/TypistComponent";
 import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage/HomePage";
