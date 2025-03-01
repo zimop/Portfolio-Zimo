@@ -10,11 +10,17 @@ interface CardProps {
     role: string;
     timeStart: string;
     timeEnd: string;
+    points: string[];
+    images: string[];
   }
-const WorkCard: React.FC<CardProps> = ({background, src, description, role, timeEnd, timeStart}) => {
+const WorkCard: React.FC<CardProps> = ({background, src, description, role, timeEnd, timeStart, points, images}) => {
     const parentRef = useRef<HTMLDivElement | null>(null);
+    const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [translateY, setTranslateY] = useState(0);
     //const workplaces = ["/images/kulaa.jpeg", "images/acer.jpeg", "images/wehi.png"]
+    const handleOnClick = () => {
+        setOverlayVisible(!isOverlayVisible); // Make the overlay visible
+    };
 
     useEffect(() => {
         if (parentRef.current) {
@@ -33,7 +39,7 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
                         : { backgroundColor: background } // Apply as a solid color
                 }>
                 <div 
-                    className = "w-[150px] h-[150px] rounded-full shadow-lg bg-white"
+                    className = "w-[150px] h-[150px] rounded-full shadow-lg bg-white z-3"
                     style={{ transform: `translateY(${translateY}px)` }}
                 >
                     <Image
@@ -44,19 +50,59 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
                         />
                 </div>
             </div>
-            <div className = "w-full h-full grid grid-rows-[0.22fr_0.30fr_0.42fr_0.1fr]">
+            <div className = "w-full h-full grid grid-rows-[0.22fr_0.78fr] container relative">
                 <span className = "h-full w-full" />
-                <div className = "h-full w-full flex flex-col items-center">
-                    <h2>{role}</h2>
-                    <span className = "text-lg font-semibold">{timeStart} - {timeEnd}</span>
+                <div className = "w-full h-full grid grid-rows-[0.38fr_0.47fr_0.15fr]">
+                    <div className = "h-full w-full flex flex-col items-center">
+                        <h2>{role}</h2>
+                        <span className = "text-lg font-semibold text-black">{timeStart} - {timeEnd}</span>
+                    </div>
+                    <div className = "px-8 h-full w-full">
+                        <h3 className = "text-gray-500">{description}</h3>
+                    </div>
+                    <div className = "w-full h-full rounded-lg flex justify-center items-center">
+                        <button 
+                            className = "w-[95%] h-[70%] border-gray-200 border-2 rounded-lg text-black hover:bg-gray-200 font-semibold z-3"
+                            onClick = {handleOnClick}>
+                            {isOverlayVisible ? "Close " : "More Details"} 
+                        </button>
+                    </div>
                 </div>
-                <div className = "px-8 h-full w-full">
-                    <h3 className = "text-gray-500">{description}</h3>
-                </div>
-                <div className = "w-full h-full rounded-lg flex justify-center items-center">
-                    <button className = "w-[80%] border-gray-200 border-2 rounded-lg">
-                        More Details
-                    </button>
+                <div
+                    className={`absolute bottom-0 left-0 w-full bg-white text-black rounded-lg z-2 transition-all duration-800 transform origin-bottom ${
+                        isOverlayVisible
+                        ? 'h-full opacity-100 scale-y-100'
+                        : 'h-0 opacity-0 scale-y-0'
+                    }`}
+                    >
+                    <div className = "w-full h-full grid grid-rows-[0.12fr_0.88fr] px-[30px]">
+                        <span></span>
+                        <div>
+                           <div className = "h-full w-full flex flex-col justify-start gap-y-2">
+                                <span className = "text-xl font-semibold pb-3">Duties</span>
+                                {points.map((point, idx) => (
+                                    <span key = {idx} className = "text-base font-semibold text-gray-500">
+                                        - {point}
+                                    </span>
+                                ))}
+                                <div className = "grid grid-cols-3 w-full h-full pt-3">
+                                    {images.map((image, idx) => (
+                                        <div key = {idx} className = "w-full h-[50%] relative flex justify-center">
+                                            <div className = "relative h-full aspect-[1/1]">
+                                                <Image
+                                                    src={image}
+                                                    alt="company"
+                                                    layout="fill"
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div> 
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
