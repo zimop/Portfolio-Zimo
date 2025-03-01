@@ -3,7 +3,7 @@ import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage/HomePage";
 import WhatIDo from "@/components/Me/WhatIDo";
-import Hobbies from "@/components/Hobbies/Hobbies";
+import Work from "@/components/WorkExperiences/Work";
 
 export default function Home() {
   return (
@@ -15,8 +15,8 @@ export default function Home() {
           <HomePage/>
           <WhatIDo/>
         </section>
-        <section id = "work" className = "pt-10">
-          <Hobbies/>
+        <section id = "work" className = "pt-10 relative z-1">
+          <Work />
         </section>
       </main>
     </div>

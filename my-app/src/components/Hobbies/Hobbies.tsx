@@ -1,8 +1,10 @@
 import HobbyCard from "./HobbyCard"
 const Hobbies: React.FC = () => {
     return (
-        <div className = "relative z-1">
-           <h1>Hobbies</h1>
+        <div>
+            <div>
+                <h1>Hobbies</h1>
+            </div>
             <HobbyCard />
         </div>
     )
