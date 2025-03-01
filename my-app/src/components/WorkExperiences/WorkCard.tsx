@@ -44,14 +44,19 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
                         />
                 </div>
             </div>
-            <div className = "w-full h-full grid grid-rows-[0.22fr_0.30fr_0.48fr]">
-                <span className = "h-full w-full " />
+            <div className = "w-full h-full grid grid-rows-[0.22fr_0.30fr_0.42fr_0.1fr]">
+                <span className = "h-full w-full" />
                 <div className = "h-full w-full flex flex-col items-center">
                     <h2>{role}</h2>
                     <span className = "text-lg font-semibold">{timeStart} - {timeEnd}</span>
                 </div>
                 <div className = "px-8 h-full w-full">
                     <h3 className = "text-gray-500">{description}</h3>
+                </div>
+                <div className = "w-full h-full rounded-lg flex justify-center items-center">
+                    <button className = "w-[80%] border-gray-200 border-2 rounded-lg">
+                        More Details
+                    </button>
                 </div>
             </div>
         </div>
