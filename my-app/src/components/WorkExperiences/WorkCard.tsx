@@ -23,7 +23,7 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, extrafrom,
       }, []);
 
     return (
-        <div className ="w-[400px] h-[600px] border-2 grid grid-rows-2 grid-rows-[0.30fr_0.70fr] rounded-lg">
+        <div className ="w-[500px] h-[600px] border-2 grid grid-rows-2 grid-rows-[0.30fr_0.70fr] rounded-lg">
             <div ref = {parentRef} className = {`w-full h-full bg-${background} ${extrafrom} ${extrato} rounded-lg flex justify-center items-center`}>
                 <div 
                     className = "w-[150px] h-[150px] rounded-full shadow-lg bg-white"
