@@ -7,10 +7,8 @@ interface CardProps {
     background: string;
     src: string;
     description: string;
-    extrafrom: string;
-    extrato: string;
   }
-const WorkCard: React.FC<CardProps> = ({background, src, description, extrafrom, extrato}) => {
+const WorkCard: React.FC<CardProps> = ({background, src, description}) => {
     const parentRef = useRef<HTMLDivElement | null>(null);
     const [translateY, setTranslateY] = useState(0);
     //const workplaces = ["/images/kulaa.jpeg", "images/acer.jpeg", "images/wehi.png"]
@@ -23,8 +21,14 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, extrafrom,
       }, []);
 
     return (
-        <div className ="w-[500px] h-[600px] border-2 grid grid-rows-2 grid-rows-[0.30fr_0.70fr] rounded-lg">
-            <div ref = {parentRef} className = {`w-full h-full bg-${background} ${extrafrom} ${extrato} rounded-lg flex justify-center items-center`}>
+        <div className ="w-[500px] h-[600px] shadow-lg grid grid-rows-2 grid-rows-[0.30fr_0.70fr] rounded-lg">
+            <div ref = {parentRef} 
+                className = {`w-full h-full rounded-lg flex justify-center items-center`}
+                style={
+                    background.startsWith("linear-gradient") 
+                        ? { backgroundImage: background } // Apply as a gradient
+                        : { backgroundColor: background } // Apply as a solid color
+                }>
                 <div 
                     className = "w-[150px] h-[150px] rounded-full shadow-lg bg-white"
                     style={{ transform: `translateY(${translateY}px)` }}

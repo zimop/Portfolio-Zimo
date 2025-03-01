@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Catamaran } from "next/font/google";
+import '@fontsource-variable/catamaran';
 import "./globals.css";
-
-const catamaran = Catamaran({
-  variable: "--font-catamaran", // Define a CSS variable for Catamaran
-  subsets: ["latin"],
-  weight: ["400", "700"], // Specify weights if needed
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${catamaran.variable} antialiased`}
+        className={`antialiased`}
       >
         {children}
       </body>
