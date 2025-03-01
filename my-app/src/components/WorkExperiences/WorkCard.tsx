@@ -7,8 +7,11 @@ interface CardProps {
     background: string;
     src: string;
     description: string;
+    role: string;
+    timeStart: string;
+    timeEnd: string;
   }
-const WorkCard: React.FC<CardProps> = ({background, src, description}) => {
+const WorkCard: React.FC<CardProps> = ({background, src, description, role, timeEnd, timeStart}) => {
     const parentRef = useRef<HTMLDivElement | null>(null);
     const [translateY, setTranslateY] = useState(0);
     //const workplaces = ["/images/kulaa.jpeg", "images/acer.jpeg", "images/wehi.png"]
@@ -35,16 +38,20 @@ const WorkCard: React.FC<CardProps> = ({background, src, description}) => {
                 >
                     <Image
                         src = {src}
-                        alt = "acer"
+                        alt = "company"
                         fill
                         className = "object-contain rounded-full"
                         />
                 </div>
             </div>
-            <div className = "w-full h-full grid grid-rows-[0.25fr_0.75fr]">
+            <div className = "w-full h-full grid grid-rows-[0.22fr_0.30fr_0.48fr]">
                 <span className = "h-full w-full " />
-                <div className = "px-8">
-                    <h3>{description}</h3>
+                <div className = "h-full w-full flex flex-col items-center">
+                    <h2>{role}</h2>
+                    <span className = "text-lg font-semibold">{timeStart} - {timeEnd}</span>
+                </div>
+                <div className = "px-8 h-full w-full">
+                    <h3 className = "text-gray-500">{description}</h3>
                 </div>
             </div>
         </div>
