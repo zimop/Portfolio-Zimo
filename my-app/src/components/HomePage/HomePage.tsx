@@ -5,14 +5,14 @@ const HomePage: React.FC = () => {
         <div className = "flex justify-center items-center w-full h-screen">
           <div className = "relative z-1 flex flex-col justify-center items-center">
             <h1 className = "name">Zimo Peng</h1>
-            <h2 className = "subheading pt-3">
+            <h2 className = "subheading md:pt-3">
               Full Stack Developer who likes building stuff with
               <br/>
               <div className = "pt-3">
                 <TypistComponent/>
               </div>
             </h2>
-            <div className="pt-8 grid grid-cols-2 gap-5 pb-8">
+            <div className="md:pt-8 grid grid-cols-2 gap-5 pb-8">
               <a href="https://www.linkedin.com/in/zimo-peng-software" target="_blank" rel="noopener noreferrer">
                 <img
                   src="/icons/linkedin.png"

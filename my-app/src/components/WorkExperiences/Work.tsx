@@ -10,8 +10,8 @@ const Work: React.FC = () => {
             timeStart: "Sep 2024",
             timeEnd: "Dec 2024", 
             points: ["Designed responsive pages with Next.js and Tailwind, optimizing code to cut build time by 1.5s.",
-                    "Implemented secure authentication with NextAuth to ensure data safety and authorization.",
-                    "Product Owner responsibilities, translating technical concepts, user story generation and leading client meetings."],
+                    "Implemented robust and secure authentication methods with NextAuth and Password Hashing.",
+                    "Communicated with the client by translating concepts, defining features and scheduling meetings."],
             images: ["/images/js.png", "/images/Next.png", "/images/vercel.svg"]
         },
         {
@@ -44,7 +44,7 @@ const Work: React.FC = () => {
             <div className = "w-full flex pb-8 ">
                 <h1>Work Experiences</h1>
             </div>
-            <div className = "grid grid-cols-3 flex justify-center items-center gap-y-[100px] gap-x-[50px]">
+            <div className = "grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 flex justify-center items-center gap-y-[100px] gap-x-[50px]">
                 {experiences.map(({background, src, description, role, timeStart, timeEnd, points, images}, index) => (
                     <div key = {index} className = "w-full flex justify-center items-center">
                         <WorkCard background = {background} src = {src} description = {description} role = {role} timeStart = {timeStart} timeEnd = {timeEnd} points = {points} images = {images}/>
