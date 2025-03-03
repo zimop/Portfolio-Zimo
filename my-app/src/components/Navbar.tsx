@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className = "hidden md:flex">
                     <div className = "item">
-                        <a href="#" className="px-4 py-2">Skills</a>
+                        <a href="#skills" className="px-4 py-2">Skills</a>
                     </div>
                 </li>
                 <li className = "hidden md:flex">
