@@ -5,6 +5,7 @@ import HomePage from "@/components/HomePage/HomePage";
 import WhatIDo from "@/components/Me/WhatIDo";
 import Work from "@/components/WorkExperiences/Work";
 import ProjectLayout from "@/components/Projects/ProjectLayout";
+import ContactPage from "@/components/ContactMe/ContactPage";
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
         </section>
         <section id = "projects" className = "relative z-1 mt-[250px]">
           <ProjectLayout />
+        </section>
+        <section id = "contactus" className = "relative z-1 mt-[250px]">
+          <ContactPage />
         </section>
       </main>
     </div>

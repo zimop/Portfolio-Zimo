@@ -40,8 +40,8 @@ const Navbar: React.FC = () => {
         >
           <li><a href="#work" className="px-4 py-2 block">Work Experiences</a></li>
           <li><a href="#home" className="px-4 py-2 block">Skills</a></li>
-          <li><a href="#" className="px-4 py-2 block">Projects</a></li>
-          <li><a href="#" className="px-4 py-2 block">Contact me</a></li>
+          <li><a href="#projects" className="px-4 py-2 block">Projects</a></li>
+          <li><a href="#contactme" className="px-4 py-2 block">Contact me</a></li>
         </ul>
       )}
     </nav>
