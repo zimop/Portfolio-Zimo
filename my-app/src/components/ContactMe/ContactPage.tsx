@@ -68,12 +68,14 @@ const FormInput = ({ field, register, errors }: {
 
 const ContactPage = () => {
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   const [displayDialog, setDisplayDialog] = useState<boolean>(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
     console.log(data);
+    setIsSubmitting(true)
     try{
       const res = await fetch("/api/contact",{
         method: "POST",
@@ -82,14 +84,16 @@ const ContactPage = () => {
           data: data
         })
       })
+      setIsSubmitting(false)
       const response = await res.json()
       console.log("Server response:", response);
       setDisplayDialog(true)
       setTimeout(() => {
         window.location.reload();
-      }, 3000);
+      }, 2000);
       
     } catch (error) {
+        setIsSubmitting(false)
         console.error("Error submitting data:", error);
     }
     // Handle form submission here
@@ -165,28 +169,44 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   className="w-full px-8 py-3 bg-cardcolour text-black rounded-full hover:bg-gray-200 transition-colors border border-textcolour"
+                  disabled = {isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <div className = "w-full relative flex flex-row items-center justify-center">
+                        <svg
+                            className="animate-spin h-5 w-5 mr-2 text-black"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M12 2a10 10 0 00-3.17 19.5 1 1 0 01-1.15-1.63 8 8 0 112.63-15.87 1 1 0 01.69 1.26A10.11 10.11 0 0012 2z"
+                            />
+                          </svg>
+                        Submitting...
+                    </div>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             </div>
           </div>
           {displayDialog && (
-                <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
+                <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-300/50">
                     <div className="bg-white p-5 rounded shadow-lg">
-                        <div className = "w-full h-[15px] flex justify-end">
-                            <button 
-                                className = "h-full"
-                                onClick = {() => {setDisplayDialog(!displayDialog)}}>
-                                <img 
-                                    src = "/icons/close-icon.png"
-                                    alt="Close"
-                                    className="h-full w-auto">
-                                </img>
-                            </button>
-                        </div>
                         <h2 className="text-lg font-semibold">Thank you!</h2>
-                        <p>We have received your details. The page will refresh shortly.</p>
+                        <p>I have received your details. The page will refresh shortly.</p>
                     </div>
                 </div>
             )}

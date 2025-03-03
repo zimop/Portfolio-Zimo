@@ -25,7 +25,7 @@ export default function Home() {
         <section id = "projects" className = "relative z-1 mt-[250px]">
           <ProjectLayout />
         </section>
-        <section id = "contactus" className = "relative z-1 mt-[250px]">
+        <section id = "contactme" className = "relative z-1 mt-[250px]">
           <ContactPage />
         </section>
       </main>
