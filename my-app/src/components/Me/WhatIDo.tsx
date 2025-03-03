@@ -30,14 +30,14 @@ const WhatIDo: React.FC = () => {
         <div className = "grid lg:grid-cols-2 grid-rows-2 relative z-1 pb-[150px]">
             <div className = "">
                 <h1 className = "">What I do</h1> 
-                <div className = "text-gray-400 text-[25px]">
+                <div className = "text-gray-400 md:text-[25px] sm:text-[22px] text-[18px]">
                     A passionate Full Stack Engineer with an eye for finding high-impact work within projects and teams. 
                 </div>
                 <div className = "grid grid-cols-6 grid-rows-2 pt-7">
                     {languages.map((language, idx) => (
                         <div key = {idx}>
                             <div className = "w-full h-full flex justify-center items-center">
-                                <div>
+                                <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20">
                                     <Image
                                         src = {language.src}
                                         alt = {"picture"}
@@ -58,7 +58,7 @@ const WhatIDo: React.FC = () => {
                                 alt = {"bullets"}
                                 width = {40}
                                 height = {40}/>
-                            <span className = "text-[23px] text-gray-500">{sentence}</span>
+                            <span className = "md:text-[23px] sm:text-[20px] text-[15px] text-gray-500">{sentence}</span>
                         </div>
                     ))}
                 </div>

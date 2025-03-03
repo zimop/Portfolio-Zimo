@@ -11,7 +11,7 @@ export default function Home() {
       <div className = "hidden md:block">
         <Background />
       </div>
-      <main className = "md:mx-[100px] mx-[30px]">
+      <main className = "md:mx-[100px] sm:mx-[30px] mx-[10px]">
         <Navbar/>
         <section id = "home">
           <HomePage/>
