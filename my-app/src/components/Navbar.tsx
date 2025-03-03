@@ -23,17 +23,12 @@ const Navbar: React.FC = () => {
                 </li>
                 <li className = "hidden md:flex">
                     <div className = "item">
-                        <a href="#skills" className="px-4 py-2">Skills</a>
+                        <a href="#projects" className="px-4 py-2">Projects</a>
                     </div>
                 </li>
                 <li className = "hidden md:flex">
                     <div className = "item">
-                        <a href="#" className="px-4 py-2">Projects</a>
-                    </div>
-                </li>
-                <li className = "hidden md:flex">
-                    <div className = "item">
-                        <a href="#" className="px-4 py-2">Contact me</a>
+                        <a href="#contactme" className="px-4 py-2">Contact me</a>
                     </div>
                 </li>
         </ul>
