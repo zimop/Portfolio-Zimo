@@ -44,7 +44,7 @@ const Work: React.FC = () => {
             <div className = "w-full flex pb-8 ">
                 <h1>Work Experiences</h1>
             </div>
-            <div className = "grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 flex justify-center items-center gap-y-[100px] gap-x-[50px]">
+            <div className = "grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 flex justify-center items-center gap-y-[100px] gap-x-[50px]">
                 {experiences.map(({background, src, description, role, timeStart, timeEnd, points, images}, index) => (
                     <div key = {index} className = "w-full flex justify-center items-center">
                         <WorkCard background = {background} src = {src} description = {description} role = {role} timeStart = {timeStart} timeEnd = {timeEnd} points = {points} images = {images}/>

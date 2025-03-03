@@ -24,20 +24,16 @@ const WhatIDo: React.FC = () => {
         {
             src:"/images/python.png", 
             name:"Python"
-        },
-        {
-            src:"/images/vercel.svg", 
-            name:"Vercel"
         },]
     const summary = ["Develop modern Front end's for your web applications", "Engineer scalable and resilient backend API services", "Leverage cloud native solutions with expertise in AWS services", "Build robust automation pipelines for CI/CD"]
     return (
-        <div className = "grid grid-cols-2 relative z-1 pb-[150px]">
+        <div className = "grid lg:grid-cols-2 grid-rows-2 relative z-1 pb-[150px]">
             <div className = "">
                 <h1 className = "">What I do</h1> 
                 <div className = "text-gray-400 text-[25px]">
                     A passionate Full Stack Engineer with an eye for finding high-impact work within projects and teams. 
                 </div>
-                <div className = "grid grid-cols-7 grid-rows-2 pt-7">
+                <div className = "grid grid-cols-6 grid-rows-2 pt-7">
                     {languages.map((language, idx) => (
                         <div key = {idx}>
                             <div className = "w-full h-full flex justify-center items-center">

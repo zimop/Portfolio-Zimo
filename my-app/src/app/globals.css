@@ -107,14 +107,20 @@ body {
   width: 692px;
 }
 
+@media (max-width: 640px) {  /* Adjust breakpoint if needed */
+  .name {
+    height: 70px;
+  }
+}
+
 .subheading {
   color: rgb(26, 32, 44);
   display: block;
-  font-size: clamp(20px, 3vw, 30px);
+  font-size: clamp(15px, 3vw, 30px);
   font-weight: 700;
   height: 117px;
+  min-height:50px;
   line-height: 39px;
-  margin-block-end: 20px;
   margin-block-start: 0px;
   margin-bottom: 20px;
   margin-inline-end: 0px;
@@ -125,6 +131,18 @@ body {
   text-align: center;
   max-width: 692px;
   width: 100%;
+}
+
+@media (max-width: 640px) {  /* Adjust breakpoint if needed */
+  .subheading {
+    height: 90px;
+  }
+}
+
+@media (max-width: 400px) {  /* Adjust breakpoint if needed */
+  .subheading {
+    height: 110px;
+  }
 }
 
 .navbar {
