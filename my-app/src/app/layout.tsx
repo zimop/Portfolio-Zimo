@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased mx-auto`}
+        className={`antialiased lg:mx-[50px] md:mx-[40px] mx-[20px]`}
       >
         {children}
       </body>

@@ -13,19 +13,16 @@ export default function Home() {
       <div className = "hidden sm:block">
         <Background />
       </div>
-      <main className = "md:mx-[100px] sm:mx-[30px] mx-[10px] ">
+      <main className=" w-full flex flex-col">
         <Navbar/>
-        <section id = "home">
+        <section id = "home" >
           <HomePage/>
           <WhatIDo/>
         </section>
-        <section id = "work" className = "relative z-1">
+        <section id = "work" className = "relative z-1 mt-[300px]">
           <Work />
         </section>
-        <section id = "skills" className = "relative z-1 mt-[100px]">
-          <SkillPage/>
-        </section>
-        <section id = "projects" className = "relative z-1 mt-[100px]">
+        <section id = "projects" className = "relative z-1 mt-[250px]">
           <ProjectLayout />
         </section>
       </main>

@@ -1,6 +1,6 @@
 const Background: React.FC = () => {
-    const hexagons = Array.from({ length: 41});
-    const rows = Array.from({ length: 100});
+    const hexagons = Array.from({ length: 38});
+    const rows = Array.from({ length: 40});
     return (
         <div className="absolute inset-0 z-0">
             <div className="flex">

@@ -1,5 +1,10 @@
+
+"use client"
+
+import { motion } from "framer-motion";
 import '../../styles/flip.css';
 import WorkCard from './WorkCard';
+
 const Work: React.FC = () => {
     const experiences = [
         {
@@ -40,7 +45,12 @@ const Work: React.FC = () => {
         }
     ]
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }} // Start invisible and slightly below
+            whileInView={{ opacity: 1, y: 0 }} // Fade in & move up when in view
+            viewport={{ once: true, amount: 0.1 }} // Trigger when 20% is visible
+            transition={{ duration: 1.2, ease: "easeOut" }} // Smooth effect
+            >
             <div className = "w-full flex pb-8 ">
                 <h1>Work Experiences</h1>
             </div>
@@ -51,7 +61,7 @@ const Work: React.FC = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

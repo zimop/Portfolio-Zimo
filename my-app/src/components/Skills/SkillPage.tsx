@@ -10,7 +10,6 @@ const SkillPage: React.FC = () => {
         {name: "Javascript", src: "/images/js.png"},
         {name: "Typescript", src: "/images/Typescript.png"},
         {name: "Java", src: "/images/java.png"},
-        {name: "NextAuth", src: "/images/nauth.png"},
         {name: "C", src: "/images/c.png"},
         {name: "C#", src: "/images/csharp.svg"},
         {name: "Python", src: "/images/python.png"},
@@ -19,9 +18,9 @@ const SkillPage: React.FC = () => {
     ]
     return (
         <div className = "w-full">
-            <h1 className = "">Skills</h1>
+            <h1 className = "pb-[50px]">Skills</h1>
             <Marquee>
-                <div className = "flex flex-row grid-rows-13 gap-x-[60px]">
+                <div className = "flex flex-row grid-rows-12 gap-x-[35px]">
                     {skills.map(({name, src}, idx) => (
                         <Skill key={idx} skill = {name} src = {src}/>
                     ))}

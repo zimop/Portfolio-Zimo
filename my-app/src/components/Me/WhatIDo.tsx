@@ -1,4 +1,8 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion";
+
 const WhatIDo: React.FC = () => {
     const languages = [
         {
@@ -27,7 +31,13 @@ const WhatIDo: React.FC = () => {
         },]
     const summary = ["Develop modern Front end's for your web applications", "Engineer scalable and resilient backend API services", "Leverage cloud native solutions with expertise in AWS services", "Build robust automation pipelines for CI/CD"]
     return (
-        <div className = "grid lg:grid-cols-2 grid-rows-2 relative z-1">
+        <motion.div
+            initial={{ opacity: 0, y: 50 }} // Start invisible and slightly below
+            whileInView={{ opacity: 1, y: 0 }} // Fade in & move up when in view
+            viewport={{ once: true, amount: 0.4 }} // Trigger when 20% is visible
+            transition={{ duration: 1.2, ease: "easeOut" }} // Smooth effect
+            >
+        <div className = "grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-1 grid-rows-2 relative z-1">
             <div className = "">
                 <h1 className = "">What I do</h1> 
                 <div className = "text-gray-400 md:text-[25px] sm:text-[22px] text-[18px]">
@@ -71,10 +81,8 @@ const WhatIDo: React.FC = () => {
                 height={400}
                />
             </div>
-            <div className = "w-full flex justify-center items-center">
-               
-            </div>
         </div>
+        </motion.div>
     )
 }
 
