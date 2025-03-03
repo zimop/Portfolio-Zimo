@@ -5,6 +5,7 @@ import HomePage from "@/components/HomePage/HomePage";
 import WhatIDo from "@/components/Me/WhatIDo";
 import Work from "@/components/WorkExperiences/Work";
 import SkillPage from "@/components/Skills/SkillPage";
+import ProjectLayout from "@/components/Projects/ProjectLayout";
 
 export default function Home() {
   return (
@@ -21,8 +22,11 @@ export default function Home() {
         <section id = "work" className = "relative z-1">
           <Work />
         </section>
-        <section id = "skills" className = "relative z-1 mt-[300px]">
+        <section id = "skills" className = "relative z-1 mt-[100px]">
           <SkillPage/>
+        </section>
+        <section id = "projects" className = "relative z-1 mt-[100px]">
+          <ProjectLayout />
         </section>
       </main>
     </div>

@@ -40,6 +40,16 @@ h1 {
   color: rgb(51, 113, 255);
 }
 
+.project-name {
+  font-size: clamp(30px, 4.6vw, 50px);
+  font-weight: bold;
+  color: black
+}
+
+.project-description {
+  font-size: clamp(15px, 2vw, 20px);
+}
+
 h2 {
   display: block;
   color: black;
