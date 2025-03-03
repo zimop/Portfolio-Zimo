@@ -27,7 +27,7 @@ const WhatIDo: React.FC = () => {
         },]
     const summary = ["Develop modern Front end's for your web applications", "Engineer scalable and resilient backend API services", "Leverage cloud native solutions with expertise in AWS services", "Build robust automation pipelines for CI/CD"]
     return (
-        <div className = "grid lg:grid-cols-2 grid-rows-2 relative z-1 pb-[150px]">
+        <div className = "grid lg:grid-cols-2 grid-rows-2 relative z-1">
             <div className = "">
                 <h1 className = "">What I do</h1> 
                 <div className = "text-gray-400 md:text-[25px] sm:text-[22px] text-[18px]">

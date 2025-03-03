@@ -2,7 +2,7 @@ import TypistComponent from "@/components/TypistComponent";
 const HomePage: React.FC = () => {
     return (
         <div className = "flex justify-center items-center w-full h-screen">
-          <div className = "relative w-full z-1 flex flex-col justify-center items-center">
+          <div className = "relative sm:w-auto w-full z-1 flex flex-col justify-center items-center">
             <h1 className = "name">Zimo Peng</h1>
             <span className = "subheading md:pt-3">
               Full Stack Developer who likes building stuff with

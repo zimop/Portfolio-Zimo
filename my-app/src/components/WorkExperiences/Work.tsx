@@ -17,7 +17,7 @@ const Work: React.FC = () => {
         {
             background: "#653366",
             src: "/images/acer.jpeg",
-            description: "During my contracted role at the ACER, I had the primary role of extending the automated test suite for the Maple Data entry functionality",
+            description: "Contracted role at the ACER where I had the role of extending their automated testing suite for their Maple Site",
             role: "Test Engineer",
             timeStart: "Jul 2024",
             timeEnd: "Sep 2024",
@@ -29,7 +29,7 @@ const Work: React.FC = () => {
         {
             background: "linear-gradient(to right, #4A9F36, #2972A4)",
             src: "/images/wehi.png",
-            description: "I worked as Research Software Engineer in the Brain Cancer Department, helping researchers patch up their R software package after 2 years of inactivity.",
+            description: "Research Software Engineer in the Brain Cancer Division, patching up their R software packages after 2 years of inactivity.",
             role: "Research Software Engineer",
             timeStart: "Nov 2023",
             timeEnd: "Feb 2024",

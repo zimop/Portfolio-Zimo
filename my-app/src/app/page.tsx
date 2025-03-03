@@ -8,10 +8,10 @@ import Work from "@/components/WorkExperiences/Work";
 export default function Home() {
   return (
     <div className = "relative w-full">
-      <div className = "hidden md:block">
+      <div className = "hidden sm:block">
         <Background />
       </div>
-      <main className = "md:mx-[100px] sm:mx-[30px] mx-[10px]">
+      <main className = "md:mx-[100px] sm:mx-[30px] mx-[10px] ">
         <Navbar/>
         <section id = "home">
           <HomePage/>

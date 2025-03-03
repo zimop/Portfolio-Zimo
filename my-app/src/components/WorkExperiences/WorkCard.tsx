@@ -32,14 +32,32 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
     return (
         <div className ="w-[500px] h-[600px] shadow-lg grid grid-rows-2 grid-rows-[0.30fr_0.70fr] rounded-lg">
             <div ref = {parentRef} 
-                className = {`w-full h-full rounded-lg flex justify-center items-center`}
+                className = {`w-full h-full rounded-lg flex flex-col justify-center items-center`}
                 style={
                     background.startsWith("linear-gradient") 
                         ? { backgroundImage: background } // Apply as a gradient
                         : { backgroundColor: background } // Apply as a solid color
                 }>
+                    <div 
+                        className={`grid grid-cols-3 h-full w-full pt-[15px] transition-opacity duration-500 ease-in-out ${
+                        isOverlayVisible ? "opacity-100 " : "opacity-0"
+                        }`}
+                    >
+                        {images.map((image, idx) => (
+                        <div key={idx} className="w-full h-[30%] relative flex justify-center">
+                            <div className="relative h-full aspect-[1/1]">
+                            <Image
+                                src={image}
+                                alt="company"
+                                layout="fill"
+                                className="object-contain"
+                            />
+                            </div>
+                        </div>
+                        ))}
+                    </div>
                 <div 
-                    className = "w-[150px] h-[150px] rounded-full shadow-lg bg-white z-3"
+                    className = "absolute w-[150px] h-[150px] rounded-full shadow-lg bg-white z-3"
                     style={{ transform: `translateY(${translateY}px)` }}
                 >
                     <Image
@@ -69,7 +87,7 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
                     </div>
                 </div>
                 <div
-                    className={`absolute bottom-0 left-0 w-full bg-white text-black rounded-lg z-2 transition-all duration-800 transform origin-bottom ${
+                    className={`absolute bottom-0 left-0 w-full bg-white text-black rounded-lg z-2 transition-all duration-1000 transform origin-bottom ${
                         isOverlayVisible
                         ? 'h-full opacity-100 scale-y-100'
                         : 'h-0 opacity-0 scale-y-0'
@@ -85,20 +103,6 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
                                         - {point}
                                     </span>
                                 ))}
-                                <div className = "grid grid-cols-3 w-full h-full pt-3">
-                                    {images.map((image, idx) => (
-                                        <div key = {idx} className = "w-full h-[50%] relative flex justify-center">
-                                            <div className = "relative h-full aspect-[1/1]">
-                                                <Image
-                                                    src={image}
-                                                    alt="company"
-                                                    layout="fill"
-                                                    className="object-contain"
-                                                />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
                             </div> 
                             
                         </div>
