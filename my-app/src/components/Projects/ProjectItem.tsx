@@ -17,6 +17,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ title, description, link }) =
             <span className="project-name">{title}</span>
             <div className = "w-full md:block hidden text-gray-400 project-description">{description}</div>
         </div>
+        <a href={link}></a>
     </div>
 
   );
