@@ -1,6 +1,6 @@
 "use client";
 import { FieldErrors, useForm, UseFormRegister } from 'react-hook-form';
-import { useRef, useState, useEffect, useMemo } from 'react';
+import { useRef, useState} from 'react';
 import styles from '@/styles/contact.module.css';
 
 interface ContactFormData {
@@ -69,36 +69,6 @@ const FormInput = ({ field, register, errors }: {
 const ContactPage = () => {
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const [displayDialog, setDisplayDialog] = useState<boolean>(false);
-
-  const sectionBackgrounds: Record<number, string> = useMemo(() => ({
-    0: 'bg-white',    // Contact section
-  }), []);
-
-  useEffect(() => {
-    const currentRefs = sectionRefs.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionIndex = currentRefs.findIndex(ref => ref === entry.target);
-          }
-        });
-      },
-      {
-        threshold: 1,
-      }
-    );
-
-    currentRefs.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      currentRefs.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, [sectionBackgrounds]);
 
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>();
 
