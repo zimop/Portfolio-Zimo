@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage/HomePage";
 import WhatIDo from "@/components/Me/WhatIDo";
 import Work from "@/components/WorkExperiences/Work";
-import SkillPage from "@/components/Skills/SkillPage";
 import ProjectLayout from "@/components/Projects/ProjectLayout";
 
 export default function Home() {
