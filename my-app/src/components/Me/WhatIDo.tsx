@@ -36,13 +36,13 @@ const WhatIDo: React.FC = () => {
                 <div className = "grid grid-cols-6 grid-rows-2 pt-7">
                     {languages.map((language, idx) => (
                         <div key = {idx}>
-                            <div className = "w-full h-full flex justify-center items-center">
-                                <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20">
+                            <div className = "w-full h-full flex justify-center items-center ">
+                                <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex justify-center items-center">
                                     <Image
                                         src = {language.src}
                                         alt = {"picture"}
-                                        width = {50}
-                                        height = {50}>
+                                        width = {45}
+                                        height = {45}>
                                     </Image>
                                 </div>
                             </div>
