@@ -87,7 +87,7 @@ const WorkCard: React.FC<CardProps> = ({background, src, description, role, time
                     </div>
                 </div>
                 <div
-                    className={`absolute bottom-0 left-0 w-full bg-white text-black rounded-lg z-2 transition-all duration-1000 transform origin-bottom ${
+                    className={`absolute bottom-0 left-0 w-full bg-white text-black rounded-lg z-2 transition-all duration-1000 transform ${
                         isOverlayVisible
                         ? 'h-full opacity-100 scale-y-100'
                         : 'h-0 opacity-0 scale-y-0'
