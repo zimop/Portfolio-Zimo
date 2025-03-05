@@ -9,7 +9,7 @@ const projects = [
   {
     title: "JoyDrobe",
     description: "A Retail Software Startup started as a way to help users style potential outfits for specific settings by using LLMs and Generative AI. ",
-    link: "https://www.joydrobe.com/",
+    link: "https://joydrobe-webfront.vercel.app",
     src: "/icons/logo-black.jpg"
   },
   {
