@@ -34,7 +34,7 @@ const WhatIDo: React.FC = () => {
         <motion.div
             initial={{ opacity: 0, y: 50 }} // Start invisible and slightly below
             whileInView={{ opacity: 1, y: 0 }} // Fade in & move up when in view
-            viewport={{ once: true, amount: 0.4 }} // Trigger when 20% is visible
+            viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible
             transition={{ duration: 1.2, ease: "easeOut" }} // Smooth effect
             >
         <div className = "grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-1 grid-rows-2 relative z-1">
