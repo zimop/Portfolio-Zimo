@@ -9,13 +9,16 @@ const things_I_like = [
   500,
   "React Native",
   500,
-  "Gatsby",
+  "TypeScript",
   500,
-  "Styled Components",
+  "Java",
   500,
   "Node.js",
   500,
-  "GraphQL",
+  "Python",
+  500,
+  "Testing",
+  500,
 ]
 
 const TypistComponent: React.FC = () => (
