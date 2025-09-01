@@ -1,5 +1,4 @@
 
-import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage/HomePage";
 import WhatIDo from "@/components/Me/WhatIDo";
@@ -10,9 +9,6 @@ import ContactPage from "@/components/ContactMe/ContactPage";
 export default function Home() {
   return (
     <div className = "relative w-full">
-      <div className = "hidden sm:block">
-        <Background />
-      </div>
       <main className=" w-full flex flex-col">
         <Navbar/>
         <section id = "home" >
